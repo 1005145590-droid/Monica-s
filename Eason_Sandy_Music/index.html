@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monica’s Musical World</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 主站：直接显示，无入场页 -->
+    <div class="main-page">
+        <!-- 顶部固定导航栏 -->
+        <nav class="nav-bar">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#eason" class="nav-item">Eason</a>
+            <a href="#sandy" class="nav-item">Sandy</a>
+            <a href="#fun-facts" class="nav-item">Fun Facts</a>
+            <a href="#interaction" class="nav-item">Interaction</a>
+        </nav>
+
+        <!-- 首页Home板块：双列歌手卡片（核心内容） -->
+        <section id="home" class="section home-section">
+            <h2 class="home-title">Welcome to my musical world</h2>
+            <div class="cards-container">
+                <!-- 陈奕迅卡片（专属灰配色） -->
+                <div class="singer-card eason-card">
+                    <div class="singer-avatar eason-avatar"></div>
+                    <h3 class="singer-name">Eason Chan (陈奕迅)</h3>
+                    <p class="singer-desc">
+                        Born on 27 July 1974 in Hong Kong, China, he formally debuted in 1995 after winning the 14th New Talent Singing Contest. He is a Mandarin pop singer, musician and actor, with notable works including ‘Decade’ and ‘Floating’.
+                    </p>
+                    <div class="singer-tag eason-tag">My favourite male singer</div>
+                </div>
+                <!-- 林忆莲卡片（专属紫配色） -->
+                <div class="singer-card sandy-card">
+                    <div class="singer-avatar sandy-avatar"></div>
+                    <h3 class="singer-name">Sandy Lam (林忆莲)</h3>
+                    <p class="singer-desc">
+                        Born on 26 April 1966 in Hong Kong, China. Entered the music industry in 1985 with her debut Cantonese album Sandy Lam. She is a Mandarin pop singer, film and television actress, and music producer. Representative works include ‘At Least There's You’ and ‘Scar’.
+                    </p>
+                    <div class="singer-tag sandy-tag">My favourite female singer</div>
+                </div>
+            </div>
+        </section>
+<!-- 陈奕迅专属板块 -->
+<section id="eason" class="section eason-section">
+    <!-- 板块标题 -->
+    <h2 class="page-title eason-title">Eason Chan - My Music Journey</h2>
+
+    <!-- 心路历程模块 -->
+    <div class="journey-container">
+        <h3 class="module-title">My Feelings About Eason</h3>
+        <p class="journey-text">
+            To trace back when I first listened to Eason Chan, I must go as far as Year 5 of primary school. 
+            While everyone else was chasing EXO and TFBoys, I alone adored his songs, feeling rather out of step. 
+            As a child, I listened to the melodies; as I grew, I savoured the lyrics. 
+            Surprisingly, at every stage of life, his voice has consistently offered me fresh inspiration and solace.
+        </p>
+    </div>
+
+    <!-- 唯一的YouTube演唱会视频模块 -->
+    <div class="youtube-container">
+        <h3 class="module-title">Recommended concert</h3>
+        <!-- 替换成你的YouTube视频ID -->
+        <div class="youtube-video">
+        <iframe width="1412" height="794" src="https://www.youtube.com/embed/xL2rN2diFos?list=RDxL2rN2diFos" title="陳奕迅~DUO演唱會2010" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
+        </div>
+    </div>
+
+   <!-- 推荐歌曲列表（适配audio文件夹） -->
+<div class="songs-container">
+    <h3 class="module-title">Recommended Songs(Click to listen)</h3>
+    <ul class="songs-list">
+        <li class="song-item" onclick="playMusic(1)">Fallen blossoms and flowing water</li>
+        <li class="song-item" onclick="playMusic(2)">Big girl</li>
+        <li class="song-item" onclick="playMusic(3)">1874</li>
+    </ul>
+
+    <!-- 关键修改：src里的music/ → audio/ -->
+    <audio id="music1" src="audio/eason-fallen.mp3" style="display:none">
+    <audio id="music2" src="audio/eason-biggirl.mp3" style="display:none">
+    <audio id="music3" src="audio/eason-1874.mp3" style="display:none">
+
+    <!-- 播放控制JS：无需修改 -->
+    <script>
+        function playMusic(num) {
+            var allMusics = [document.getElementById('music1'), document.getElementById('music2'), document.getElementById('music3')];
+            allMusics.forEach(function(music) {
+                music.pause();
+                music.currentTime = 0;
+            });
+            var currentMusic = document.getElementById('music' + num);
+            currentMusic.play();
+        }
+    </script>
+</div>
+
+<!-- 林忆莲专属板块 -->
+<section id="sandy" class="section sandy-section">
+    <!-- 板块标题（专属紫系装饰线） -->
+    <h2 class="page-title sandy-title">Sandy Lam - My Music Journey</h2>
+
+    <!-- 心路历程模块 -->
+    <div class="journey-container">
+        <h3 class="module-title sandy-module">My Feelings About Sandy</h3>
+        <p class="journey-text">
+            It's incredible that this year marks my first true immersion into Sandy Lam's world. 
+            On 3rd January, I journeyed to Shenzhen for her concert and have been utterly captivated ever since. 
+            She completely shattered my preconceived notions of her—her style is ever-changing, at times playfully charming, at others enchantingly alluring, 
+            her magnetism utterly irresistible.
+        </p>
+    </div>
+
+    <!-- YouTube演唱会视频模块（仅1个） -->
+    <div class="youtube-container">
+        <h3 class="module-title sandy-module">Recommended concert</h3>
+        <!-- 替换成你的Sandy YouTube视频ID -->
+        <div class="youtube-video">
+        <iframe width="1412" height="794" src="https://www.youtube.com/embed/biTDdne_TZg?list=RDbiTDdne_TZg" title="林忆莲 Sandy Lam Concert 2012 MMXI 香港演唱会-HD高清" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- 推荐歌曲列表（指定3首+点击播放） -->
+    <div class="songs-container">
+        <h3 class="module-title sandy-module">Recommended Songs(Click to listen)</h3>
+        <ul class="songs-list">
+            <li class="song-item sandy-song" onclick="playSandyMusic(1)">Street of Temptation</li>
+            <li class="song-item sandy-song" onclick="playSandyMusic(2)">Farewell to Sorrow</li>
+            <li class="song-item sandy-song" onclick="playSandyMusic(3)">Still</li>
+        </ul>
+
+        <!-- 隐藏的音频标签（对应3首歌，audio文件夹） -->
+        <audio id="sandyMusic1" src="audio/sandy-street.mp3" style="display:none">
+        <audio id="sandyMusic2" src="audio/sandy-farewell.mp3" style="display:none">
+        <audio id="sandyMusic3" src="audio/sandy-still.mp3" style="display:none">
+
+        <!-- Sandy播放控制JS（独立函数，不影响Eason的播放） -->
+        <script>
+            // 定义Sandy的播放函数，独立于Eason，避免冲突
+            function playSandyMusic(num) {
+                // 先暂停Sandy的所有音频
+                var allSandyMusics = [document.getElementById('sandyMusic1'), document.getElementById('sandyMusic2'), document.getElementById('sandyMusic3')];
+                allSandyMusics.forEach(function(music) {
+                    music.pause();
+                    music.currentTime = 0;
+                });
+                // 播放选中的歌曲
+                var currentSandyMusic = document.getElementById('sandyMusic' + num);
+                currentSandyMusic.play();
+            }
+        </script>
+    </div>
+</section>
+
+<!-- Fun Facts 趣味冷知识板块 -->
+<section id="fun-facts" class="section fun-facts-section">
+    <!-- 板块标题（灰+紫渐变装饰线，呼应双歌手） -->
+    <h2 class="page-title fun-facts-title">Fun Facts About Eason & Sandy</h2>
+
+    <!-- 冷知识卡片容器（双列布局，和首页歌手卡片一致） -->
+    <div class="facts-container">
+        <!-- 陈奕迅冷知识卡片（浅灰底色，专属灰强调） -->
+        <div class="fact-card eason-fact-card">
+            <h3 class="fact-card-title">Eason Chan</h3>
+            <!-- 冷知识列表 -->
+            <ul class="fact-list">
+                <li class="fact-item">
+                    <span class="fact-icon">🎬</span>
+                    <span class="fact-text">His first love was in Britain.</span>
+                </li>
+                <li class="fact-item">
+                    <span class="fact-icon">🎤</span>
+                    <span class="fact-text">He sang the theme song for the Hong Kong version of Ultraman Dyna.</span>
+                </li>
+                <li class="fact-item">
+                    <span class="fact-icon">🎵</span>
+                    <span class="fact-text">The character “迅” in his name comes from Lu Xun, as his father greatly admired the writer.</span>
+                </li>
+                <li class="fact-item">
+                    <span class="fact-icon">✨</span>
+                    <span class="fact-text">He reckons his belly button could make it big.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 林忆莲冷知识卡片（浅紫底色，专属紫强调） -->
+        <div class="fact-card sandy-fact-card">
+            <h3 class="fact-card-title">Sandy Lam</h3>
+            <!-- 冷知识列表 -->
+            <ul class="fact-list">
+                <li class="fact-item">
+                    <span class="fact-icon">🎷</span>
+                    <span class="fact-text">She enjoys talking to herself in the mirror.</span>
+                </li>
+                <li class="fact-item">
+                    <span class="fact-icon">🎧</span>
+                    <span class="fact-text">She did her own make-up for this tour.</span>
+                </li>
+                <li class="fact-item">
+                    <span class="fact-icon">🌆</span>
+                    <span class="fact-text">She isn't afraid of cockroaches, but she is afraid of mice.</span>
+                </li>
+                <li class="fact-item">
+                    <span class="fact-icon">✨</span>
+                    <span class="fact-text">She has had permanent hair removal under her arms.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Interaction 互动区板块 -->
+<section id="interaction" class="section interaction-section">
+    <!-- 板块标题（灰+紫渐变装饰线） -->
+    <h2 class="page-title interaction-title">Interaction - Test & Share Your Story</h2>
+
+    <!-- 子模块1：冷知识问答（4题定制版） -->
+    <div class="quiz-container">
+        <h3 class="module-title interaction-module">Eason & Sandy Trivia Quiz</h3>
+        <!-- 问答卡片 -->
+        <div class="quiz-card">
+            <!-- 题目区（初始显示第1题，其他题隐藏） -->
+            <div id="question1" class="question active">
+                <p class="question-text">1. What do Eason's fans like to call him the most?</p>
+                <div class="options">
+                    <button class="option-btn" data-correct="false" onclick="checkAnswer(1, this)">A. Fat Chan</button>
+                    <button class="option-btn" data-correct="true" onclick="checkAnswer(1, this)">B. Husband</button>
+                </div>
+                <!-- 解析区（初始隐藏） -->
+                <div class="explanation" id="exp1"></div>
+                <!-- 下一题按钮（初始隐藏） -->
+                <button class="next-btn" id="next1" onclick="nextQuestion(1)" style="display:none;">Next Question →</button>
+            </div>
+
+            <div id="question2" class="question" style="display:none;">
+                <p class="question-text">2. Which of the following songs is by Eason Chan?</p>
+                <div class="options">
+                    <button class="option-btn" data-correct="true" onclick="checkAnswer(2, this)">A. Man on the Moon</button>
+                    <button class="option-btn" data-correct="false" onclick="checkAnswer(2, this)">B. Man under the Moon</button>
+                </div>
+                <div class="explanation" id="exp2"></div>
+                <button class="next-btn" id="next2" onclick="nextQuestion(2)" style="display:none;">Next Question →</button>
+            </div>
+
+            <div id="question3" class="question" style="display:none;">
+                <p class="question-text">3. What do Sandy Lam's fans like to call her?</p>
+                <div class="options">
+                    <button class="option-btn" data-correct="true" onclick="checkAnswer(3, this)">A. Mommy</button>
+                    <button class="option-btn" data-correct="false" onclick="checkAnswer(3, this)">B. Goddess</button>
+                </div>
+                <div class="explanation" id="exp3"></div>
+                <button class="next-btn" id="next3" onclick="nextQuestion(3)" style="display:none;">Next Question →</button>
+            </div>
+
+            <div id="question4" class="question" style="display:none;">
+                <p class="question-text">4. What does Sandy Lam like to do when she holds concerts in a new city?</p>
+                <div class="options">
+                    <button class="option-btn" data-correct="false" onclick="checkAnswer(4, this)">A. Go shopping</button>
+                    <button class="option-btn" data-correct="true" onclick="checkAnswer(4, this)">B. Taste and review local food</button>
+                </div>
+                <div class="explanation" id="exp4"></div>
+                <button class="next-btn" id="next4" onclick="nextQuestion(4)" style="display:none;">See Result →</button>
+            </div>
+
+            <!-- 结果页（初始隐藏） -->
+            <div id="quiz-result" class="quiz-result" style="display:none;">
+                <h4 id="result-title"></h4>
+                <p id="result-desc"></p>
+                <button class="reset-btn" onclick="resetQuiz()">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 子模块2：歌曲故事留言板 -->
+    <div class="message-container">
+        <h3 class="module-title interaction-module">Share Your Song Story</h3>
+        <!-- 输入区 -->
+        <div class="message-input">
+            <input type="text" id="msg-nickname" placeholder="Nickname (optional)" class="nickname-input">
+            <textarea id="msg-content" placeholder="Which song of Eason/Sandy do you like best? Share your little story about it～ (Max 200 words)" class="content-input" maxlength="200"></textarea>
+            <p class="word-count" id="word-count">0/200</p>
+            <button class="submit-btn" id="msg-submit" onclick="submitMessage()" disabled>Submit</button>
+        </div>
+        <!-- 提示框（初始隐藏） -->
+        <div class="msg-tip" id="msg-tip" style="display:none;"></div>
+        <!-- 留言列表 -->
+        <div class="message-list" id="message-list"></div>
+    </div>
+
+    <!-- 互动区核心JS -->
+    <script>
+        // ---------------- 问答功能核心逻辑 ----------------
+        let correctCount = 0; // 答对题数
+        const explanations = [
+            "", // 占位（对应question1）
+            "✅ Correct! Eason's fans love to call him 'Husband' affectionately, which is a sweet nickname full of love!",
+            "✅ You got it! 'Man on the Moon' is a classic song by Eason Chan, loved by many fans!",
+            "✅ Right answer! Sandy's fans affectionately call her 'Mommy' because of her gentle and warm stage presence!",
+            "✅ Exactly! Sandy loves to taste and review local food in every city she performs in, a true food lover!"
+        ];
+        const wrongTips = [
+            "",
+            "❌ Oops! Eason's fans rarely call him 'Fat Chan'—'Husband' is their favorite sweet nickname!",
+            "❌ Not quite! 'Man under the Moon' is not Eason's song; 'Man on the Moon' is the right one!",
+            "❌ Nice try! Sandy's fans call her 'Mommy' instead of 'Goddess' for her warm vibe!",
+            "❌ Close! Sandy prefers tasting local food over shopping when she's on tour!"
+        ];
+        const resultTexts = [
+            {title: "😜 Keep Learning!", desc: "You got 0/4 correct. Time to check the Fun Facts section and try again!"},
+            {title: "✨ Good Try!", desc: "You got 1/4 correct. You know a little about Eason & Sandy—keep it up!"},
+            {title: "🎉 Great Job!", desc: "You got 2/4 correct. You're a casual fan of Eason & Sandy!"},
+            {title: "🌟 Super Fan!", desc: "You got 3/4 correct. Almost a pro—just one more to perfect!"},
+            {title: "🏆 Ultimate Fan!", desc: "You got 4/4 correct! You know Eason & Sandy like the back of your hand!"}
+        ];
+
+        // 检查答案
+        function checkAnswer(qNum, btn) {
+            const options = btn.parentElement.querySelectorAll('.option-btn');
+            // 禁用所有选项
+            options.forEach(opt => opt.disabled = true);
+            // 判断对错
+            const isCorrect = btn.dataset.correct === "true";
+            if (isCorrect) {
+                btn.classList.add('correct');
+                document.getElementById(`exp${qNum}`).innerHTML = explanations[qNum];
+                document.getElementById(`exp${qNum}`).classList.add('correct-exp');
+                correctCount++;
+            } else {
+                btn.classList.add('wrong');
+                // 高亮正确选项
+                options.forEach(opt => {
+                    if (opt.dataset.correct === "true") opt.classList.add('correct');
+                });
+                document.getElementById(`exp${qNum}`).innerHTML = wrongTips[qNum];
+                document.getElementById(`exp${qNum}`).classList.add('wrong-exp');
+            }
+            // 显示解析和下一题按钮
+            document.getElementById(`exp${qNum}`).style.display = "block";
+            document.getElementById(`next${qNum}`).style.display = "block";
+        }
+
+        // 切换下一题
+        function nextQuestion(qNum) {
+            // 隐藏当前题，显示下一题
+            document.getElementById(`question${qNum}`).style.display = "none";
+            if (qNum < 4) {
+                document.getElementById(`question${qNum+1}`).style.display = "block";
+            } else {
+                // 显示结果页
+                document.getElementById(`question4`).style.display = "none";
+                document.getElementById(`quiz-result`).style.display = "block";
+                document.getElementById(`result-title`).innerText = resultTexts[correctCount].title;
+                document.getElementById(`result-desc`).innerText = resultTexts[correctCount].desc;
+                // 本地存储答题结果
+                localStorage.setItem('quiz_correct', correctCount);
+            }
+        }
+
+        // 重置问答
+        function resetQuiz() {
+            correctCount = 0;
+            // 重置所有题状态
+            for (let i=1; i<=4; i++) {
+                const q = document.getElementById(`question${i}`);
+                q.style.display = "none";
+                const options = q.querySelectorAll('.option-btn');
+                options.forEach(opt => {
+                    opt.disabled = false;
+                    opt.classList.remove('correct', 'wrong');
+                });
+                const exp = document.getElementById(`exp${i}`);
+                exp.style.display = "none";
+                exp.classList.remove('correct-exp', 'wrong-exp');
+                document.getElementById(`next${i}`).style.display = "none";
+            }
+            // 显示第一题，隐藏结果页
+            document.getElementById(`question1`).style.display = "block";
+            document.getElementById(`quiz-result`).style.display = "none";
+        }
+
+        // ---------------- 留言板核心逻辑 ----------------
+        // 监听输入，启用提交按钮
+        document.getElementById('msg-content').addEventListener('input', function() {
+            const content = this.value.trim();
+            const submitBtn = document.getElementById('msg-submit');
+            // 更新字数统计
+            document.getElementById('word-count').innerText = `${content.length}/200`;
+            // 启用/禁用按钮
+            submitBtn.disabled = content.length === 0;
+        });
+
+        // 提交留言
+        function submitMessage() {
+            const nickname = document.getElementById('msg-nickname').value.trim() || "Anonymous User";
+            const content = document.getElementById('msg-content').value.trim();
+            const now = new Date();
+            const time = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            // 生成留言ID
+            const msgId = `msg_${Date.now()}`;
+            // 组装留言数据
+            const msgData = {
+                id: msgId,
+                nickname: nickname,
+                content: content,
+                time: time
+            };
+
+            // 读取本地存储的留言列表
+            let msgList = JSON.parse(localStorage.getItem('message_list')) || [];
+            // 新增留言到顶部
+            msgList.unshift(msgData);
+            // 保存到本地存储
+            localStorage.setItem('message_list', JSON.stringify(msgList));
+
+            // 渲染留言列表
+            renderMessageList();
+            // 清空输入框
+            document.getElementById('msg-nickname').value = "";
+            document.getElementById('msg-content').value = "";
+            document.getElementById('word-count').innerText = "0/200";
+            // 显示成功提示
+            showTip("Your story has been shared successfully ✨", "success");
+        }
+
+        // 渲染留言列表
+        function renderMessageList() {
+            const msgList = JSON.parse(localStorage.getItem('message_list')) || [];
+            const listContainer = document.getElementById('message-list');
+            listContainer.innerHTML = ""; // 清空现有列表
+
+            if (msgList.length === 0) {
+                listContainer.innerHTML = "<p class='empty-msg'>No stories yet—be the first to share! 🎵</p>";
+                return;
+            }
+
+            // 遍历生成留言卡片
+            msgList.forEach(msg => {
+                // 判断留言关联歌手，设置边框色
+                let borderClass = "msg-card-default";
+                if (msg.content.toLowerCase().includes('eason')) borderClass = "msg-card-eason";
+                else if (msg.content.toLowerCase().includes('sandy')) borderClass = "msg-card-sandy";
+
+                const msgCard = `
+                    <div class="msg-card ${borderClass}" data-id="${msg.id}">
+                        <div class="msg-header">
+                            <span class="msg-nickname">${msg.nickname}</span>
+                            <span class="msg-time">${msg.time}</span>
+                            <button class="delete-btn" onclick="deleteMessage('${msg.id}')">🗑️</button>
+                        </div>
+                        <div class="msg-content">${msg.content}</div>
+                    </div>
+                `;
+                listContainer.innerHTML += msgCard;
+            });
+        }
+
+        // 删除留言
+        function deleteMessage(msgId) {
+            if (confirm("Are you sure to delete this message?")) {
+                let msgList = JSON.parse(localStorage.getItem('message_list')) || [];
+                // 过滤掉要删除的留言
+                msgList = msgList.filter(msg => msg.id !== msgId);
+                // 保存更新后的列表
+                localStorage.setItem('message_list', JSON.stringify(msgList));
+                // 重新渲染
+                renderMessageList();
+                // 显示删除提示
+                showTip("Message deleted successfully", "info");
+            }
+        }
+
+        // 显示提示框
+        function showTip(text, type) {
+            const tip = document.getElementById('msg-tip');
+            tip.innerText = text;
+            tip.className = `msg-tip ${type}-tip`;
+            tip.style.display = "block";
+            // 2秒后隐藏
+            setTimeout(() => {
+                tip.style.display = "none";
+            }, 2000);
+        }
+
+        // 页面加载时渲染留言列表
+        window.onload = function() {
+            renderMessageList();
+            // 读取本地存储的答题结果（可选）
+            const savedCorrect = localStorage.getItem('quiz_correct');
+            if (savedCorrect) correctCount = parseInt(savedCorrect);
+        };
+    </script>
+</section>
+
+    </div>
+</body>
+</html>
